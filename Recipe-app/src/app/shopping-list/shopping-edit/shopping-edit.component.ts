@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Ingredient} from "../../shared/ingredient.model";
 
 @Component({
@@ -8,6 +8,9 @@ import {Ingredient} from "../../shared/ingredient.model";
 })
 export class ShoppingEditComponent {
 
+
+  @Input() defaultColor: string = 'blue';
+  @Input() highlightColor: string = 'red';
   @ViewChild('nameInput')nameInputRef:ElementRef;
   @ViewChild('amountInput')amountInputRef:ElementRef;
 
