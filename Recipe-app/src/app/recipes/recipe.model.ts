@@ -1,13 +1,26 @@
+import {Ingredient} from "../shared/ingredient.model";
+
 export class Recipe {
   private _name: string;
   private _description: string;
   private _image: string;
+  private _ingredients: Ingredient[];
 
 
-  constructor(name: string, description: string, image: string) {
+  constructor(name: string, description: string, image: string, ingredients: Ingredient[]) {
     this._name = name;
     this._description = description;
     this._image = image;
+    this._ingredients = ingredients;
+  }
+
+
+  get ingredients(): Ingredient[] {
+    return this._ingredients;
+  }
+
+  set ingredients(value: Ingredient[]) {
+    this._ingredients = value;
   }
 
   get name(): string {
